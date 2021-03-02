@@ -8,8 +8,6 @@ package:
 source:
   - url: https://github.com/opencontainers/runc/releases/download/v{{ upstream_version }}/runc.tar.xz
     sha256: 70ee0fcf45b17f0da93dd4c4d174046a3584080dcc07c5468914d33d57c8202d
-    patches:
-      - 0001-Add-missing-defines-for-CentOS-6.patch
 
 build:
   number: 0
@@ -26,6 +24,7 @@ requirements:
     - go-licenses
     - make
     - pkg-config
+    - sysroot_linux-64 2.17  # [linux64]
   host:
     - libseccomp
   run:
