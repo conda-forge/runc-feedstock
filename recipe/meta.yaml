@@ -43,7 +43,7 @@ about:
   license: Apache-2.0
   license_file:
     - LICENSE
-    - thirdparty-licenses.txt
+    - thirdparty-licenses/
   summary: CLI tool for spawning and running containers according to the OCI specification
   description: |
     runc is a command line client for running applications packaged according to the Open Container Initiative (OCI) format and is a compliant implementation of the Open Container Initiative specification.
