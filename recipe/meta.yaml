@@ -1,4 +1,4 @@
-{% set upstream_version = "1.0.0-rc92" %}
+{% set upstream_version = "1.0.0-rc93" %}
 {% set version = upstream_version | replace("-", "") %}
 
 package:
@@ -7,9 +7,7 @@ package:
 
 source:
   - url: https://github.com/opencontainers/runc/releases/download/v{{ upstream_version }}/runc.tar.xz
-    sha256: 2f76b623b550588db98e2be72e74aae426f5d4cf736bd92afb91dd5586816daf
-    patches:
-      - 0001-Add-missing-defines-for-CentOS-6.patch
+    sha256: 70ee0fcf45b17f0da93dd4c4d174046a3584080dcc07c5468914d33d57c8202d
 
 build:
   number: 0
@@ -26,6 +24,7 @@ requirements:
     - go-licenses
     - make
     - pkg-config
+    - sysroot_linux-64 2.17  # [linux64]
   host:
     - libseccomp
   run:
@@ -43,7 +42,7 @@ about:
   license: Apache-2.0
   license_file:
     - LICENSE
-    - thirdparty-licenses.txt
+    - thirdparty-licenses/
   summary: CLI tool for spawning and running containers according to the OCI specification
   description: |
     runc is a command line client for running applications packaged according to the Open Container Initiative (OCI) format and is a compliant implementation of the Open Container Initiative specification.
