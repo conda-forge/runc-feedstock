@@ -1,4 +1,4 @@
-{% set upstream_version = "1.0.0-rc93" %}
+{% set upstream_version = "1.0.1" %}
 {% set version = upstream_version | replace("-", "") %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/opencontainers/runc/releases/download/v{{ upstream_version }}/runc.tar.xz
-    sha256: 70ee0fcf45b17f0da93dd4c4d174046a3584080dcc07c5468914d33d57c8202d
+    sha256: 7401a8be2556490074418c4b04c6e0584854ff15e899da9ebeb6d22abd877323
 
 build:
   number: 0
