@@ -1,4 +1,4 @@
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: runc
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/opencontainers/runc/releases/download/v{{ version }}/runc.tar.xz
-    sha256: 7401a8be2556490074418c4b04c6e0584854ff15e899da9ebeb6d22abd877323
+    sha256: 740acb49e33eaf4958b5109c85363c1d3900f242d4cab47fbdbefa6f8f3c6909
 
 build:
   number: 0
