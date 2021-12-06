@@ -1,4 +1,4 @@
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: runc
@@ -6,15 +6,15 @@ package:
 
 source:
   - url: https://github.com/opencontainers/runc/releases/download/v{{ version }}/runc.tar.xz
-    sha256: 740acb49e33eaf4958b5109c85363c1d3900f242d4cab47fbdbefa6f8f3c6909
+    sha256: e9297b338f3b382cc3a40d4c4a3bfbe8ff8db9761028691a67ea68e612d21ab6
 
 build:
   number: 0
-  skip: True  # [not linux]
+  skip: true  # [not linux]
   # Binary relocation causes:
   #   runc: symbol lookup error: runc: undefined symbol: seccomp_api_get
   # because of https://github.com/opencontainers/runc/commit/0a8e4117e7f715d5fbeef398405813ce8e88558b
-  binary_relocation: False
+  binary_relocation: false
 
 requirements:
   build:
