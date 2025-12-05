@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.2.7" %}
 
 package:
   name: runc
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/opencontainers/runc/releases/download/v{{ version }}/runc.tar.xz
-    sha256: 152e8975793aa45a6717e367bd1652f8147728d25adad339d2f70c4fd2ddc623
+    sha256: dc6eb3ed580796d0a8688bba3b9bca1cfba1f5248305f68408129da1fffdd0fd
 
 build:
   number: 0
@@ -18,12 +18,12 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cgo') }}
     - go-licenses
     - make
     - pkg-config
-    - sysroot_linux-64 2.17  # [linux64]
   host:
     - libseccomp
   run:
